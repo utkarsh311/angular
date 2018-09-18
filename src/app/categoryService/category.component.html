@@ -1,0 +1,46 @@
+<!--  <mat-accordion class="saveCategory">
+  <div class="categoryBody">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-description>
+        ADD CATEGORY
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <input matInput placeholder="Category Name">
+    </mat-form-field>
+    <br><br>
+    <mat-form-field>
+      <input matInput placeholder="Category Description">
+    </mat-form-field>
+    <br><br>
+    <button mat-button>Submit</button>
+    </mat-expansion-panel>
+</div>
+</mat-accordion> -->
+<mat-accordion class="saveCategory">
+    <div class="categoryBody">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-description>
+          ADD CATEGORY
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-form-field>
+        <input matInput [(ngModel)]="category.categoryName" placeholder="Category Name" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <br><br>
+      <mat-form-field>
+        <input matInput [(ngModel)]="category.categoryDescription" placeholder="Cateory Description" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <br><br>
+      <button mat-button (click)="onClick(category)">Submit </button>
+        <div *ngIf="savedcategory">
+          <h2>Your Category Details:</h2>
+         <h4>Category Name:</h4> {{savedcategory.categoryName}}
+         <h4>Category Description:</h4> {{savedcategory.categoryDescription}}
+        </div>
+    
+      </mat-expansion-panel>
+  </div>
+  </mat-accordion>

@@ -1,0 +1,35 @@
+ <mat-accordion class="saveReminder">
+  <div class="reminderBody">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-description>
+        ADD REMINDER
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <input matInput [(ngModel)]="reminder.reminderName" placeholder="Reminder Name" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <br><br>
+    <mat-form-field>
+      <input matInput [(ngModel)]="reminder.reminderDescription" placeholder="Reminder Description" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <br><br>
+    <button mat-button (click)="onClick(reminder)">Submit </button>
+      <div *ngIf="savedreminder">
+        <h2>Your Reminder Details:</h2>
+       <h4>reminderName:</h4> {{savedreminder.reminderName}}
+       <h4>reminderDescription:</h4> {{savedreminder.reminderDescription}}
+      </div>
+  
+    </mat-expansion-panel>
+</div>
+</mat-accordion>
+   
+
+<!-- 
+   <form>
+     NAME:
+     <input  [(ngModel)]="reminder.reminderName" placeholder="NAME" [ngModelOptions]="{standalone: true}"> 
+     {{reminder.reminderName}} 
+     <input type="text" placeholder="sdljan">
+   </form> -->

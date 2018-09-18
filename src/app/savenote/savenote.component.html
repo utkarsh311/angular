@@ -1,0 +1,51 @@
+<mat-accordion class="saveNote">
+  <div class="noteBody">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-description>
+        save your note HERE!
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <input matInput [(ngModel)]="note.noteContent" placeholder="Note Content" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <br><br>
+    <mat-form-field>
+        <input matInput [(ngModel)]="note.noteTitle" placeholder="Note Title" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <br><br>
+    <mat-form-field>
+        <input matInput [(ngModel)]="note.noteStatus" placeholder="Note Status" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <br><br>
+    <!-- <mat-form-field>
+        <mat-select placeholder="Favorite food">
+          <mat-option>
+            ABC
+          </mat-option>
+        </mat-select>
+      </mat-form-field>  --> 
+ <button mat-button [matMenuTriggerFor]="menu">REMINDER</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Reminder 1</button>
+  <button mat-menu-item>Reminder 2</button>
+</mat-menu>
+        <br> <br>
+       
+        <button mat-button [matMenuTriggerFor]="menu">CATEGORY</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Category 1</button>
+          <button mat-menu-item>Category 2</button>
+        </mat-menu>
+        <br><br>
+        <button mat-button (click)="submit(note)">Submit</button>
+        <div *ngIf="savednote">
+            <h2>Saved Note Details:</h2>
+           <h4>Note Content:</h4> {{savednote.noteContent}}
+           <h4>Note Title</h4>{{savednote.noteTitle}}
+           <h4>Note Status:</h4> {{savednote.noteStatus}}
+          </div>
+      
+  </mat-expansion-panel>
+</div>
+</mat-accordion>

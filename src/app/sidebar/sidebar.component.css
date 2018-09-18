@@ -1,0 +1,14 @@
+.sidebar {
+    position: absolute;
+    left:-4px;
+    width: 250px;
+    height: 642px;
+     margin: 10px; 
+    border: 1px solid #555;
+}
+
+.sidebarContent
+{
+    font-size: 32px;
+    color:orange;
+}
